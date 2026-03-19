@@ -1,0 +1,118 @@
+1. Long Call (from the bank’s perspective)
+
+Client pays premium upfront
+
+No borrowing / no leverage required
+
+If it goes bad → client loses premium they already paid
+
+👉 Bank Risk
+
+ZERO credit risk
+
+The trade is fully funded
+
+Worst case: client loses their own money
+
+✔️ Bank exposure = $0
+
+2. Uncovered Put (Short Put)
+
+Client sells a put → collects premium
+
+But takes on obligation to buy stock if it crashes
+
+Example:
+
+Strike = $50
+
+Stock → $0
+
+Client must buy at $50
+
+👉 Bank Risk
+
+Client may not have enough capital
+
+Losses can exceed account equity
+
+Bank may be left holding a deficit
+
+✔️ Bank exposure = REAL credit risk
+
+🤔 So why did he say Long Call is riskier?
+
+This is where the nuance comes in — and this is likely what the interviewer is testing:
+
+💡 The trick answer:
+
+They’re thinking in terms of margin / capital efficiency / exposure per dollar
+
+⚖️ The Real Interview Framing
+A) Uncovered Put
+
+Heavily margined
+
+Bank collects:
+
+Margin requirement
+
+Collateral buffer
+
+Risk is controlled and monitored
+
+👉 Bank has protection
+
+B) Long Call
+
+Appears “safe”… but:
+
+⚠️ The issue:
+
+It creates synthetic leverage
+
+Client can take very large directional exposure with little capital
+
+Example:
+
+$1,000 buys control of $50,000+ of stock exposure
+
+🚨 Why this matters to the bank:
+
+Massive market exposure with minimal capital
+
+If used at scale → can create systemic / concentration risk
+
+Harder to control vs margin-based positions
+
+🧠 The Interview Answer (What they want to hear)
+
+Here’s how you should answer it:
+
+“While an uncovered put has theoretically larger downside, from the bank’s perspective it is margined and collateralized, so the risk is managed.
+
+A long call, on the other hand, requires no margin and allows clients to take on significant notional exposure with limited capital, which can create higher systemic and concentration risk for the firm. Therefore, from a bank risk perspective, a long call can be considered more risky.”
+
+🔥 Simple Way to Remember
+
+Uncovered put → big risk, but controlled
+
+Long call → small loss, but uncontrolled exposure
+
+🎯 If they push you further
+
+You can add:
+
+“Uncovered puts create credit risk (client default)”
+
+“Long calls create market risk / leverage risk (exposure imbalance)”
+
+“Banks care more about uncontrolled exposure vs controlled risk”
+
+💬 Real Talk
+
+You weren’t wrong — you were just answering a different question:
+
+You answered: “Which position has bigger losses?”
+
+They wanted: “Which position creates more risk to the bank’s balance sheet?”
