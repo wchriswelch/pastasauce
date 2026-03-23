@@ -1,0 +1,28 @@
+Hi Team,
+
+I wanted to flag a potential issue identified today regarding multi-leg options order handling and buy/close indicators.
+
+A client placed two separate multi-leg orders:
+
+**Order 1:**
+
+* Sell to Open – 662 SPY Call (Mar 25, 2025)
+* Buy to Open – 665 SPY Call (Mar 26, 2025)
+
+**Order 2:**
+
+* Sell to Open (Covered) – 665 SPY Call (Mar 26, 2025)
+* Buy to Open – 668 SPY Call (Mar 26, 2025)
+
+Following the execution of these orders, the system appears to have treated the second “Buy to Open” leg (665 strike) as effectively closing out the existing short position from the first order.
+
+This resulted in the client holding a materially different spread than what was originally intended.
+
+It appears there may be an issue with how the system is interpreting buy/open vs. buy/close indicators across multiple multi-leg orders, particularly when overlapping strikes and expiries are involved.
+
+Could you please review and confirm whether this behavior is expected, or if this may be a system issue related to invalid or misapplied buy/close indicators?
+
+Please let me know if any additional details are required.
+
+Thanks,
+[Your Name]
