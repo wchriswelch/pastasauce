@@ -1,0 +1,23 @@
+Shortcut	What it does
+Ctrl + B	Bold
+Ctrl + I	Italic
+Ctrl + U	Underline
+Ctrl + 1	⭐ Open Format Cells
+Ctrl + Shift + $	Currency format
+Ctrl + Shift + %	Percentage format
+Ctrl + Shift + #	Date format
+Ctrl + Shift + !	Number format with commas + 2 decimals
+Ctrl + Shift + ~	General number format
+Ctrl + 5	Strikethrough
+Alt + H, H	Fill/background colour
+Alt + H, FC	Font colour
+Alt + H, B	Borders menu
+Alt + H, A, C	Center align
+Alt + H, A, L	Left align
+Alt + H, A, R	Right align
+Alt + H, W	Wrap Text
+Alt + H, O, I	⭐ AutoFit column width
+Alt + H, O, A	AutoFit row height
+Ctrl + T	⭐ Turn selected data into an Excel Table
+Ctrl + Space	Select entire column
+Shift + Space	Select entire row
