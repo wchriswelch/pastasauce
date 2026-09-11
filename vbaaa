@@ -1,0 +1,15 @@
+Sub TestAdobeForms()
+
+    Dim AForm As Object
+
+    On Error GoTo Failed
+
+    Set AForm = CreateObject("AFormAut.App")
+
+    MsgBox "Success! AFormAut automation is available."
+    Exit Sub
+
+Failed:
+    MsgBox "Failed: " & Err.Number & vbCrLf & Err.Description
+
+End Sub
