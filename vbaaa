@@ -1,15 +1,60 @@
-Sub TestAdobeForms()
+Option Explicit
 
-    Dim AForm As Object
+Public Sub CreateClientFolder()
 
-    On Error GoTo Failed
+    Dim ws As Worksheet
+    Dim wsSetup As Worksheet
+    Dim baseFolder As String
+    Dim clientName As String
+    Dim clientFolder As String
 
-    Set AForm = CreateObject("AFormAut.App")
+    Set ws = ThisWorkbook.Worksheets("Addendum Form")
+    Set wsSetup = ThisWorkbook.Worksheets("Setup")
 
-    MsgBox "Success! AFormAut automation is available."
-    Exit Sub
+    baseFolder = Trim(CStr(wsSetup.Range("B4").Value))
+    clientName = Trim(CStr(ws.Range("C12").Value))
 
-Failed:
-    MsgBox "Failed: " & Err.Number & vbCrLf & Err.Description
+    If baseFolder = "" Then
+        MsgBox "Enter the Base Addendums Folder on the Setup sheet.", vbExclamation
+        Exit Sub
+    End If
+
+    If clientName = "" Then
+        MsgBox "Enter the client name first.", vbExclamation
+        Exit Sub
+    End If
+
+    ' Create base folder if needed
+    If Dir(baseFolder, vbDirectory) = "" Then
+        MkDir baseFolder
+    End If
+
+    ' Create client folder
+    clientFolder = baseFolder & "\" & CleanFileName(clientName)
+
+    If Dir(clientFolder, vbDirectory) = "" Then
+        MkDir clientFolder
+        MsgBox "Client folder created:" & vbCrLf & clientFolder, vbInformation
+    Else
+        MsgBox "Client folder already exists:" & vbCrLf & clientFolder, vbInformation
+    End If
+
+    ' Open the folder
+    Shell "explorer.exe """ & clientFolder & """", vbNormalFocus
 
 End Sub
+
+Private Function CleanFileName(ByVal s As String) As String
+
+    Dim badChars As Variant
+    Dim ch As Variant
+
+    badChars = Array("\", "/", ":", "*", "?", """", "<", ">", "|")
+
+    CleanFileName = Trim(s)
+
+    For Each ch In badChars
+        CleanFileName = Replace(CleanFileName, CStr(ch), "-")
+    Next ch
+
+End Function
